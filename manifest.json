@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "getty forum fixes",
+  "description": "Try to make the getty forums less ugly",
+  "version": "0.0.1",
+  
+  "icons": { 
+          "128": "g.png" },
+  "content_scripts": [ {
+    "js": [ "jquery-1.10.2.min.js", "theasis_getty_forum.user.js" ],
+    "matches": [
+      "http://contributors.gettyimages.com/forum/*",
+      "https://contributors.gettyimages.com/forum/*"
+	]
+  } ]
+
+}
