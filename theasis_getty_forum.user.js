@@ -1,4 +1,18 @@
-// version 0.0.1
+// Copyright (c) Martin McCarthy 2015
+// version 0.0.3
+// Chrome Browser Script
+//
+// Make some tweaks to (potentially) improve the readability of the
+// Getty Contributor Forums, at least for iStock folks.
+//
+// v0.0.1 08 Jul 2015 Martin McCarthy
+//        First public release
+// v0.0.2 08 Jul 2015 Martin McCarthy
+//        Wording tweaks. Because the world is insane.
+// v0.0.3 08 Jul 2015
+//        Change the "Like" button to "Say Thanks", at least for English
+//        versions
+//
 function main() {
 
   fix_styles=function() {
@@ -16,8 +30,13 @@ function main() {
     });
   };
 
+  text_tweaks=function() {
+    jQ("span[id^='dvThankBox'] span:contains('Like')").text("Say Thanks");
+  };
+
   fix_styles();
   close_non_istock_forums();
+  text_tweaks();
 }
 
 
