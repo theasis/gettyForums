@@ -1,5 +1,5 @@
 // Copyright (c) Martin McCarthy 2015
-// version 0.0.3
+// version 0.0.4
 // Chrome Browser Script
 //
 // Make some tweaks to (potentially) improve the readability of the
@@ -12,12 +12,17 @@
 // v0.0.3 08 Jul 2015
 //        Change the "Like" button to "Say Thanks", at least for English
 //        versions
+//        Spell 'arial' correctly
+// v0.0.4 09 Jul 2015
+//        Make sticky and announcement posts a little more obvious
 //
 function main() {
 
   fix_styles=function() {
-    jQ(".yafnet").css({"font-family":"'Lucida Grande',Verdana,Corbel,'Bitstream Vera Sans','DejaVu Sans',ariel,sans-serif"});
+    jQ(".yafnet").css({"font-family":"'Lucida Grande',Verdana,Corbel,'Bitstream Vera Sans','DejaVu Sans',arial,sans-serif"});
     jQ("tr.forumRow, tr.forumRow_Alt, tr.topicRow, tr.topicRow_Alt").css({"border-top":"thin dashed #999"});
+    jQ(".topicImage img[src$='/topic_sticky.gif']").parent().parent().css({"border-left":"4px solid gold","background-image":"linear-gradient(gold,#ffc,#ffe,#ffe,#eeb)"});
+    jQ(".topicImage img[src$='/topic_announce.gif']").parent().parent().css({"border-left":"4px solid red","background-image":"linear-gradient(#f44,gold,#ffc,#ffe,#f44)"});
   };
 
   close_non_istock_forums=function() {
