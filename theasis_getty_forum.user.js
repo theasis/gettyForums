@@ -12,6 +12,8 @@
 // v0.0.3 08 Jul 2015
 //        Change the "Like" button to "Say Thanks", at least for English
 //        versions
+// v0.0.4 07 Aug 2015
+//		  Link to iStock
 //
 function main() {
 
@@ -33,10 +35,16 @@ function main() {
   text_tweaks=function() {
     jQ("span[id^='dvThankBox'] span:contains('Like')").text("Say Thanks");
   };
+  
+  add_links=function() {
+	  var linkItem=jQ("<li class='menuGeneral'><a title='iStock' href='http://istockphoto.com/user_view.php' target='_blank'>iStock</a></li>");
+	  jQ("#yafheader ul.menuList:last").append(linkItem);
+  };
 
   fix_styles();
   close_non_istock_forums();
   text_tweaks();
+  add_links();
 }
 
 
