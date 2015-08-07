@@ -3,7 +3,7 @@
 
   "name": "getty forum fixes",
   "description": "Minor changes to the Getty contributor forum style. You may find it improves readability.",
-  "version": "0.0.4",
+  "version": "0.0.6",
   
   "icons": { 
           "128": "g.png" },
