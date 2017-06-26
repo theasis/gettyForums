@@ -19,6 +19,12 @@
 //        Make the user details less...huge
 // v0.0.6 07 Aug 2015
 //		  Link to iStock
+// v0.0.7 09 Dec 2015
+//		  Show iStock balance if you're logged in to iS
+// v0.0.8 06 Feb 2017
+//		  iStock balance is no longer available, so stop checking for it!
+// v0.0.9 26 Jun 2017
+//      iStock forums are folded im with Getty forums, so don't try to close the non-iStock ones
 //
 function main() {
 
@@ -40,27 +46,16 @@ function main() {
     });
   };
 
-  close_non_istock_forums=function() {
-    jQ(".header2 input[src$='/collapse.gif']").each(function(){
-      var t=jQ(this);
-      var f=t.next().eq(0).attr('href');
-      if (!f.match(/&c=10\b/)) {
-          t.click();
-      }
-    });
-  };
-
   text_tweaks=function() {
     jQ("span[id^='dvThankBox'] span:contains('Like')").text("Say Thanks");
   };
   
   add_links=function() {
-	  var linkItem=jQ("<li class='menuGeneral'><a title='iStock' href='http://istockphoto.com/user_view.php' target='_blank'>iStock</a></li>");
+	  var linkItem=jQ("<li class='menuGeneral'><a id='theasis_link_to_istock' title='iStock' href='http://istockphoto.com/user_view.php' target='_blank'>iStock</a></li>");
 	  jQ("#yafheader ul.menuList:last").append(linkItem);
   };
-
+  
   fix_styles();
-  close_non_istock_forums();
   text_tweaks();
   add_links();
 }
